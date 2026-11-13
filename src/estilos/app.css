@@ -92,6 +92,8 @@
 .etapa { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 14px; padding-top: 3dvh; text-align: center; }
 .etapa > .boton-principal { margin-top: auto; }
 .etapa-entrada > .boton-principal { margin-top: 0; }
+.etapa-intencion > .boton-principal { margin-top: 2px; }
+.etapa-intencion .campo textarea { scroll-margin-bottom: 90px; }
 
 /* Respiración */
 .etapa-respiracion { justify-content: center; padding-top: 0; }

@@ -75,8 +75,9 @@ export function Ritual({ onSalir, rapida = false }: { onSalir: () => void; rapid
                 <span className="solo-lectores">{t.ritual.intencion.etiqueta}</span>
                 <textarea value={intencion} onChange={(e) => setIntencion(e.target.value)} placeholder={t.ritual.intencion.ejemplo} rows={3} maxLength={280} />
               </label>
-              <p className="nota">{t.ritual.intencion.privado}</p>
+              {/* El botón va pegado al campo para que el teclado del móvil no lo tape. */}
               <button className="boton boton-principal" type="submit">{intencion.trim() ? t.ritual.intencion.continuar : t.ritual.intencion.silencio}</button>
+              <p className="nota">{t.ritual.intencion.privado}</p>
             </form>
           )}
           {etapa === "elegir" && <Elegir onElegida={revelar} />}
