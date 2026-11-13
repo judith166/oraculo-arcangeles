@@ -3,7 +3,7 @@ import { config } from "@/config";
 import { cartaPorId, dorso, t } from "@/contenido";
 import { actualizarAjustes, useEstado, type Tirada } from "@/store/estado";
 import { CartaDelDia } from "@/componentes/CartaDelDia";
-import { IconoAjustes, IconoCamino, IconoLuna, IconoSol } from "@/componentes/Iconos";
+import { IconoAjustes, IconoAtras, IconoCamino, IconoLuna, IconoSol } from "@/componentes/Iconos";
 import { Ajustes } from "./Ajustes";
 
 export function Hoy({ tirada, onRitual, onRapida, onRepaso, onCamino }: { tirada?: Tirada; onRitual: () => void; onRapida: () => void; onRepaso: () => void; onCamino: () => void }) {
@@ -17,12 +17,17 @@ export function Hoy({ tirada, onRitual, onRapida, onRepaso, onCamino }: { tirada
 
   return (
     <main className="pantalla hoy">
+      {/* Con la carta a la vista, la barra queda en dos iconos para que la carta suba entre ellos. */}
       <header className="barra">
-        <button className="boton boton-pastilla" onClick={onCamino}><IconoCamino />{t.hoy.camino}</button>
+        {carta && viendo
+          ? <button className="icono-boton" onClick={() => setViendo(false)} aria-label={t.carta.volver}><IconoAtras /></button>
+          : <button className="boton boton-pastilla" onClick={onCamino}><IconoCamino />{t.hoy.camino}</button>}
         <div className="barra-botones">
-          <button className="icono-boton" onClick={() => actualizarAjustes({ tema: claro ? "oscuro" : "claro" })} aria-label={claro ? t.ajustes.cambiarAOscuro : t.ajustes.cambiarAClaro}>
-            {claro ? <IconoLuna /> : <IconoSol />}
-          </button>
+          {!(carta && viendo) && (
+            <button className="icono-boton" onClick={() => actualizarAjustes({ tema: claro ? "oscuro" : "claro" })} aria-label={claro ? t.ajustes.cambiarAOscuro : t.ajustes.cambiarAClaro}>
+              {claro ? <IconoLuna /> : <IconoSol />}
+            </button>
+          )}
           <button className="icono-boton" onClick={() => setAjustes(true)} aria-label={t.ajustes.abrir}><IconoAjustes /></button>
         </div>
       </header>
@@ -31,10 +36,7 @@ export function Hoy({ tirada, onRitual, onRapida, onRepaso, onCamino }: { tirada
         <CartaDelDia
           key={tirada!.id} carta={carta}
           pie={
-            <>
-              <p className="nota">{t.hoy.acompana}</p>
-              <button className="boton boton-texto" onClick={() => setViendo(false)}>{t.carta.volver}</button>
-            </>
+<button className="boton boton-texto" onClick={() => setViendo(false)}>{t.carta.volver}</button>
           }
         />
       ) : (

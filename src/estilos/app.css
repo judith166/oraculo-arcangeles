@@ -13,8 +13,19 @@
 .carta img, .abanico img, .espera-mazo img, .mazo-reposo img { pointer-events: none; -webkit-touch-callout: none; }
 
 /* ───────── Carta del día ───────── */
-.carta-dia { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; padding-top: 10px; }
-.carta-marco { position: relative; width: min(60vw, calc(38dvh * 5 / 7), 280px); margin: clamp(14px, 3.5dvh, 40px) 0 22px; }
+/* Todo cabe en una pantalla: los textos ocupan lo que necesitan y la carta se queda
+   con el resto del alto, subiendo hasta colocarse entre los dos iconos de la barra. */
+.carta-dia { flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+.carta-marco {
+  position: relative; flex: 1 1 0; min-height: 150px; max-height: min(48dvh, 420px);
+  aspect-ratio: 5 / 7; width: auto; max-width: calc(100vw - 164px);
+  margin: -44px 0 clamp(12px, 2.4dvh, 22px);
+}
+.carta-marco .carta { height: 100%; width: auto; }
+.pantalla:has(.carta-dia) .barra { position: relative; z-index: 2; pointer-events: none; }
+.pantalla:has(.carta-dia) .barra > * { pointer-events: auto; }
+.emblema .carta-marco { flex: none; max-height: none; max-width: none; min-height: 0; }
+.emblema .carta-marco .carta { height: auto; width: 100%; }
 .carta-marco.entra { animation: carta-entra 1.1s var(--suave) both; }
 @keyframes carta-entra { from { opacity: 0; transform: translateY(46px) scale(0.8); } }
 .carta-halo {
@@ -38,14 +49,17 @@
 }
 :root[data-tema="claro"] .destello { mix-blend-mode: multiply; background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--rayo, #fff) 70%, #fff) 0%, color-mix(in srgb, var(--rayo, #fff) 35%, transparent) 30%, transparent 62%); }
 
-.carta-textos { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; min-height: 40dvh; }
+.carta-textos { flex: none; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 5px; text-align: center; visibility: hidden; }
+.carta-dia.con-textos .carta-textos { visibility: visible; }
 .carta-rayo { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rayo-texto); }
-.carta-nombre { font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 8.4vw, 2.5rem); line-height: 1.1; color: var(--oro-texto); }
+.carta-nombre { font-family: var(--serif); font-weight: 600; font-size: clamp(1.8rem, 7.6vw, 2.4rem); line-height: 1.1; color: var(--oro-texto); }
 .carta-atributos { font-size: 0.92rem; color: var(--texto-2); max-width: 34ch; text-wrap: balance; }
-.carta-regla { width: 160px; height: 1px; margin: 10px 0 8px; background: linear-gradient(90deg, transparent, var(--rayo-texto), transparent); }
-.carta-mensaje { font-family: var(--sans); font-weight: 450; font-size: 1.1rem; line-height: 1.6; max-width: 32ch; display: flex; flex-direction: column; gap: 0.7em; text-wrap: pretty; }
-.carta-acciones { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 22px; }
+.carta-regla { width: 160px; height: 1px; margin: 6px 0 5px; background: linear-gradient(90deg, transparent, var(--rayo-texto), transparent); }
+.carta-mensaje { font-family: var(--sans); font-weight: 450; font-size: 1.02rem; line-height: 1.5; max-width: 34ch; display: flex; flex-direction: column; gap: 0.5em; text-wrap: pretty; }
+.carta-acciones { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 4px; margin-top: clamp(10px, 2dvh, 20px); }
+.carta-acciones .boton-texto { min-height: 44px; }
 .aparece { animation: aparece 1.2s var(--suave) both; animation-delay: calc(var(--n, 0) * 170ms); }
+.carta-dia:not(.con-textos) .aparece { animation: none; }
 @keyframes aparece { from { opacity: 0; transform: translateY(14px); } }
 
 .contexto-cita { font-family: var(--sans); font-weight: 600; font-size: 1.06rem; line-height: 1.6; color: var(--texto); display: flex; flex-direction: column; gap: 0.6em; max-width: 34ch; }
@@ -162,7 +176,7 @@
 /* ───────── Escritorio ───────── */
 @media (min-width: 720px) {
   .pantalla { max-width: 480px; padding-top: 34px; padding-bottom: 34px; }
-  .carta-mensaje { font-size: 1.16rem; }
+  .carta-mensaje { font-size: 1.12rem; line-height: 1.6; }
 }
 
 /* ───────── Bienvenida y tutorial ───────── */
@@ -245,3 +259,11 @@
 .hoja-intencion { display: flex; flex-direction: column; gap: 2px; font-style: italic; margin-bottom: 8px; max-width: 34ch; }
 .hoja-intencion small { font-style: normal; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--texto-2); }
 :root[data-calma] .ranking-barra i { animation: none; }
+
+/* Móviles bajos: se aprieta un poco la letra para que siga cabiendo todo. */
+@media (max-height: 700px) {
+  .carta-mensaje { font-size: 0.95rem; line-height: 1.45; }
+  .carta-atributos { font-size: 0.85rem; }
+  .carta-nombre { font-size: 1.7rem; }
+  .carta-marco { min-height: 130px; }
+}

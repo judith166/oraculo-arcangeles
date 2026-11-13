@@ -82,22 +82,19 @@ export function CartaDelDia({ carta, revelar = false, origen, pie }: { carta: Ca
         <CartaVista carta={carta} bocaArriba={girada} />
       </div>
 
-      <div className="carta-textos" aria-live="polite">
-        {textos && (
-          <>
-            <p className="carta-rayo aparece" style={{ "--n": 0 } as React.CSSProperties}>{con(t.carta.rayo, { nombre: carta.rayo.nombre })}</p>
-            <h1 className="carta-nombre aparece" style={{ "--n": 1 } as React.CSSProperties}>{carta.nombre}</h1>
-            <p className="carta-atributos aparece" style={{ "--n": 2 } as React.CSSProperties}>{carta.atributos.join(" · ")}</p>
-            <div className="carta-regla aparece" style={{ "--n": 3 } as React.CSSProperties} aria-hidden="true" />
-            <div className="carta-mensaje aparece" style={{ "--n": 4 } as React.CSSProperties}>
-              {carta.mensajePrincipal.split(/\n+/).map((p, i) => <p key={i}>{p}</p>)}
-            </div>
-            <div className="carta-acciones aparece" style={{ "--n": 6 } as React.CSSProperties}>
-              <button className="boton boton-principal" onClick={() => setCompleto(true)}>{t.carta.completo}</button>
-              {pie}
-            </div>
-          </>
-        )}
+      {/* Siempre ocupa su sitio (aunque aún no se vea) para que la carta no cambie de tamaño al aparecer. */}
+      <div className="carta-textos" aria-live="polite" aria-hidden={!textos}>
+        <p className="carta-rayo aparece" style={{ "--n": 0 } as React.CSSProperties}>{con(t.carta.rayo, { nombre: carta.rayo.nombre })}</p>
+        <h1 className="carta-nombre aparece" style={{ "--n": 1 } as React.CSSProperties}>{carta.nombre}</h1>
+        <p className="carta-atributos aparece" style={{ "--n": 2 } as React.CSSProperties}>{carta.atributos.join(" · ")}</p>
+        <div className="carta-regla aparece" style={{ "--n": 3 } as React.CSSProperties} aria-hidden="true" />
+        <div className="carta-mensaje aparece" style={{ "--n": 4 } as React.CSSProperties}>
+          {carta.mensajePrincipal.split(/\n+/).map((p, i) => <p key={i}>{p}</p>)}
+        </div>
+        <div className="carta-acciones aparece" style={{ "--n": 6 } as React.CSSProperties}>
+          <button className="boton boton-principal" onClick={() => setCompleto(true)}>{t.carta.completo}</button>
+          {pie}
+        </div>
       </div>
 
       <HojaCarta carta={carta} abierta={completo} onCerrar={() => setCompleto(false)} />
