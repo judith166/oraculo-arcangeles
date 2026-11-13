@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "oraculo", "runtimeExecutable": "deno", "runtimeArgs": ["task", "dev"], "port": 5173 }
+  ]
+}

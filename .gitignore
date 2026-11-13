@@ -1,0 +1,5 @@
+node_modules
+dist
+.DS_Store
+# Imagen de referencia de terceros: no se publica
+material/a9cc05523186f5bfa300fb06683e351e.jpg

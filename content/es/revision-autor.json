@@ -1,0 +1,125 @@
+{
+  "nota": "Frases adaptadas del libro o nuevas, pendientes de que el autor las revise y apruebe. La clave indica dónde está cada frase en textos.json. Los mensajes y contextos de las cartas (cartas.json) NO se han tocado.",
+  "frases": [
+    {
+      "clave": "hoy.esperaSub",
+      "tipo": "nuevo",
+      "adaptado": true,
+      "original": null
+    },
+    {
+      "clave": "hoy.acompana",
+      "tipo": "adaptado",
+      "adaptado": true,
+      "original": "Saca la carta del día. Y esa energía te acompañará y apoyará."
+    },
+    {
+      "clave": "ritual.entrada.titulo",
+      "tipo": "adaptado",
+      "adaptado": true,
+      "original": "Encuentra tu lugar y momento de calma."
+    },
+    {
+      "clave": "ritual.entrada.texto",
+      "tipo": "adaptado",
+      "adaptado": true,
+      "original": "Toca las cartas, hazlas tuyas, hazte amigo de ellas, cuidándolas como un tesoro de luz."
+    },
+    {
+      "clave": "ritual.respiracion.guia",
+      "tipo": "adaptado",
+      "adaptado": true,
+      "original": "Siente la energía de las cartas o del libro, entre tus manos. Llévalas al corazón."
+    },
+    {
+      "clave": "ritual.intencion.texto",
+      "tipo": "adaptado",
+      "adaptado": true,
+      "original": "Antes de echar las cartas pon un propósito, una INTENCIÓN. […] Aunque también puedes hacerlo en silencio […] pues ellos ya saben lo que necesitas en lo más profundo de tu corazón."
+    },
+    {
+      "clave": "ritual.intencion.privado",
+      "tipo": "nuevo",
+      "adaptado": true,
+      "original": null
+    },
+    {
+      "clave": "ritual.elegir.titulo",
+      "tipo": "nuevo",
+      "adaptado": true,
+      "original": null
+    },
+    {
+      "clave": "ritual.elegir.texto",
+      "tipo": "nuevo",
+      "adaptado": true,
+      "original": null
+    },
+    {
+      "clave": "hoy.rapidaSub",
+      "tipo": "nuevo",
+      "adaptado": true,
+      "original": null
+    },
+    {
+      "clave": "hoy.yaTienes",
+      "tipo": "nuevo",
+      "adaptado": true,
+      "original": null
+    },
+    {
+      "clave": "bienvenida.paginas.0.titulo",
+      "tipo": "nuevo",
+      "adaptado": true,
+      "original": null
+    },
+    {
+      "clave": "bienvenida.paginas.0.texto",
+      "tipo": "fragmento",
+      "adaptado": true,
+      "original": "Introducción, párrafo 1 (dos primeras frases y la tercera, unidas con dos puntos; resto del párrafo omitido)."
+    },
+    {
+      "clave": "bienvenida.paginas.1.titulo",
+      "tipo": "nuevo",
+      "adaptado": true,
+      "original": null
+    },
+    {
+      "clave": "bienvenida.paginas.1.texto",
+      "tipo": "fragmento",
+      "adaptado": true,
+      "original": "Introducción, párrafo 2 (se omite «Tu transformación incide en el mundo»)."
+    },
+    {
+      "clave": "bienvenida.paginas.2.titulo",
+      "tipo": "adaptado",
+      "adaptado": true,
+      "original": "…siente que la carta, el Arcángel te elige a ti."
+    },
+    {
+      "clave": "bienvenida.paginas.2.texto",
+      "tipo": "adaptado",
+      "adaptado": true,
+      "original": "Toca las cartas, hazlas tuyas, hazte amigo de ellas, cuidándolas como un tesoro de luz. / Tú no la eliges, libérate así, relájate y confía en que vendrá el mensaje apropiado y necesario en tu momento actual. Sin expectativas, ábrete a recibir este regalo."
+    },
+    {
+      "clave": "tutorial.pasos.*",
+      "tipo": "nuevo",
+      "adaptado": true,
+      "original": "Textos del tutorial según el brief (apartado 5.2), sin las referencias a barajar, guardar y compartir."
+    },
+    {
+      "clave": "tutorial.pasos.3.texto",
+      "tipo": "adaptado",
+      "adaptado": true,
+      "original": "Saca la carta del día. Y esa energía te acompañará y apoyará."
+    },
+    {
+      "clave": "camino.*",
+      "tipo": "nuevo",
+      "adaptado": true,
+      "original": null
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "app": {
+    "nombre": "Oráculo de los Arcángeles",
+    "autor": "Ilustraciones de David Mateu"
+  },
+  "hoy": {
+    "espera": "Tu mensaje de luz te espera",
+    "esperaSub": "Los arcángeles ya están contigo.",
+    "comenzar": "Comenzar el ritual",
+    "tuCarta": "Tu carta de hoy",
+    "acompana": "Su energía te acompaña hasta mañana",
+    "rapida": "Tirada rápida",
+    "rapidaSub": "Recibe tu carta sin pasar por el ritual",
+    "verCarta": "Ver tu carta de hoy",
+    "yaTienes": "Tu carta de hoy ya está contigo",
+    "camino": "Mi camino"
+  },
+  "ritual": {
+    "salir": "Salir del ritual",
+    "sonidoOn": "Activar sonido",
+    "sonidoOff": "Silenciar sonido",
+    "entrada": {
+      "titulo": "Encuentra tu momento de calma",
+      "texto": "Lleva tu mano al corazón y siente que los arcángeles ya están contigo.",
+      "boton": "Estoy lista"
+    },
+    "respiracion": {
+      "inspira": "Inspira…",
+      "espira": "Espira…",
+      "guia": "Respira profundamente tres veces y siente cómo tu corazón se abre a la luz.",
+      "saltar": "Saltar"
+    },
+    "intencion": {
+      "titulo": "Pon tu intención",
+      "texto": "Escribe tu pregunta o tu propósito de hoy. También puedes guardarlo en silencio: los arcángeles ya saben lo que necesitas en lo más profundo de tu corazón.",
+      "etiqueta": "Tu intención de hoy",
+      "ejemplo": "Hoy quiero…",
+      "privado": "Tu intención se guarda solo en este dispositivo.",
+      "continuar": "Continuar",
+      "silencio": "Prefiero el silencio"
+    },
+    "elegir": {
+      "titulo": "¿Qué Arcángel te acompaña hoy?",
+      "texto": "Elige una carta y recibe el mensaje de tu Arcángel.",
+      "carta": "Carta {n} de {total}"
+    }
+  },
+  "carta": {
+    "completo": "Recibe el mensaje completo",
+    "volver": "Volver al inicio",
+    "cerrar": "Cerrar",
+    "rayo": "Rayo {nombre}",
+    "dorso": "Dorso de la carta: alas de luz con los colores del arcoíris",
+    "ilustracion": "Ilustración de {nombre}, por David Mateu"
+  },
+  "ajustes": {
+    "titulo": "Ajustes",
+    "modo": "Modo",
+    "modoAuto": "Automático",
+    "modoClaro": "Claro",
+    "modoOscuro": "Oscuro",
+    "sonido": "Sonido",
+    "sonidoSub": "Cuenco tibetano al revelar la carta",
+    "calma": "Reducir animaciones",
+    "calmaSub": "Transiciones más simples y sin partículas",
+    "abrir": "Abrir ajustes",
+    "cambiarAClaro": "Cambiar a modo claro",
+    "cambiarAOscuro": "Cambiar a modo oscuro",
+    "repaso": "Volver a ver la bienvenida y el tutorial"
+  },
+  "recorrido": {
+    "saltar": "Saltar",
+    "siguiente": "Siguiente",
+    "pagina": "Página {n} de {total}"
+  },
+  "bienvenida": {
+    "continuar": "Continuar",
+    "paginas": [
+      {
+        "titulo": "Mensajes de luz para tu presente",
+        "texto": "Estas cartas y mensajes angelicales te inspiran y guían para que tomes conciencia de lo que te pasa en este instante presente. No te van a adivinar el futuro ni decir lo que tienes que hacer: te darán claves para vivir desde otro prisma la situación a la que te estés enfrentando."
+      },
+      {
+        "titulo": "Conecta con tu esencia divina",
+        "texto": "Estas cartas te van a conectar con tu esencia divina. Te llevan a sentir que formas parte de un todo, que todo y todos estamos interconectados. Eres importante y necesaria en este gran puzle universal."
+      },
+      {
+        "titulo": "El Arcángel te elige a ti",
+        "texto": "Lleva tu mano al corazón y siente que los arcángeles ya están contigo: tu tesoro de luz está dentro de ti. Tú no eliges la carta. Relájate y confía en que vendrá el mensaje apropiado y necesario en tu momento actual. Sin expectativas, ábrete a recibir este regalo."
+      }
+    ]
+  },
+  "tutorial": {
+    "paso": "Paso {n} de {total}",
+    "empezar": "Comenzar mi primer ritual",
+    "pasos": [
+      {
+        "titulo": "Qué es el oráculo",
+        "texto": "Los arcángeles te envían un mensaje de luz cada día. El oráculo no adivina el futuro: te da claves para vivir el presente."
+      },
+      {
+        "titulo": "El ritual",
+        "texto": "Respira, pon tu intención y deja que la carta te elija. Y si un día vas con prisa, la tirada rápida te lleva directa a tu carta."
+      },
+      {
+        "titulo": "Tu mensaje",
+        "texto": "Primero ves el mensaje principal y, si quieres, profundizas con «Recibe el mensaje completo»."
+      },
+      {
+        "titulo": "Tu carta te acompaña",
+        "texto": "La energía de tu carta te acompaña y te apoya durante todo el día. Vuelve a ella siempre que lo necesites."
+      },
+      {
+        "titulo": "Hazlo tuyo",
+        "texto": "Elige cómo quieres vivir tu momento de luz."
+      }
+    ]
+  },
+  "avisos": {
+    "titulo": "Aviso diario",
+    "sub": "«Los arcángeles tienen un mensaje para ti hoy»",
+    "hora": "Hora del aviso",
+    "pendiente": "En esta versión de prueba guardamos tu preferencia; los avisos empezarán a llegar en la próxima entrega.",
+    "denegado": "El permiso de avisos está desactivado en tu dispositivo. Puedes activarlo en sus ajustes.",
+    "noDisponible": "Para recibir avisos, añade primero la app a tu pantalla de inicio.",
+    "iosTitulo": "En iPhone, añádela a tu pantalla de inicio",
+    "iosPaso1": "Toca el botón Compartir de Safari",
+    "iosPaso2": "Elige «Añadir a pantalla de inicio»",
+    "iosPaso3": "Abre el oráculo desde su icono"
+  },
+  "camino": {
+    "titulo": "Mi camino",
+    "volver": "Volver al inicio",
+    "principal": "El Arcángel que más te acompaña",
+    "veces": "Te ha acompañado {n} veces",
+    "vez": "Te ha acompañado 1 vez",
+    "arcangeles": "Tus Arcángeles",
+    "historial": "Tus tiradas",
+    "hoy": "Hoy",
+    "ayer": "Ayer",
+    "ritual": "Ritual",
+    "rapida": "Tirada rápida",
+    "intencion": "Tu intención",
+    "vacioTitulo": "Tu camino empieza hoy",
+    "vacioTexto": "Aquí verás las cartas que te han salido y el Arcángel que más te acompaña.",
+    "contador": "{n} veces",
+    "contadorUna": "1 vez",
+    "tiradas": "{n} tiradas",
+    "tirada": "1 tirada",
+    "dias": "{n} días de luz",
+    "dia": "1 día de luz"
+  }
+}
