@@ -95,7 +95,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .vista { position: relative; z-index: 1; overflow-x: clip; }
 .pantalla {
   width: 100%; max-width: 460px; min-height: 100dvh; margin: 0 auto;
-  padding: calc(14px + env(safe-area-inset-top)) 22px calc(22px + env(safe-area-inset-bottom));
+  padding: calc(14px + env(safe-area-inset-top)) 22px calc(12px + env(safe-area-inset-bottom));
   display: flex; flex-direction: column;
 }
 .barra { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; }
