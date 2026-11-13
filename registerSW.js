@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/oraculo-arcangeles/sw.js', { scope: '/oraculo-arcangeles/' })})}

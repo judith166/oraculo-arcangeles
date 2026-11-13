@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0B0A24" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description" content="Oráculo de los Arcángeles: tu mensaje de luz de cada día." />
+    <link rel="apple-touch-icon" href="/oraculo-arcangeles/iconos/icono-192.png" />
+    <title>Oráculo de los Arcángeles</title>
+    <script>
+      // Aplica el tema antes de pintar, para evitar un destello.
+      try {
+        var e = JSON.parse(localStorage.getItem("oraculo:v1") || "{}");
+        var t = (e.ajustes && e.ajustes.tema) || "auto";
+        if (t === "auto") t = matchMedia("(prefers-color-scheme: light)").matches ? "claro" : "oscuro";
+        document.documentElement.dataset.tema = t;
+      } catch (_) { document.documentElement.dataset.tema = "oscuro"; }
+    </script>
+    <script type="module" crossorigin src="/oraculo-arcangeles/assets/index-CBK1cTKD.js"></script>
+    <link rel="stylesheet" crossorigin href="/oraculo-arcangeles/assets/index-BVo8GdF9.css">
+  <link rel="manifest" href="/oraculo-arcangeles/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/oraculo-arcangeles/registerSW.js"></script></head>
+  <body>
+    <div id="raiz"></div>
+  </body>
+</html>
