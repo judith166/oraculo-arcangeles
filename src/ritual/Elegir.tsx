@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { config } from "@/config";
 import { con, dorso, t } from "@/contenido";
 import { luz } from "@/lib/luz";
@@ -10,6 +10,29 @@ export function Elegir({ onElegida }: { onElegida: (desde: Origen) => void }) {
   const n = config.cartasEnAbanico;
   const [abierto, setAbierto] = useState(false);
   const [elegida, setElegida] = useState<number | null>(null);
+  // En pantallas táctiles: la carta que hay bajo el dedo se eleva, como con el ratón.
+  const [tocada, setTocada] = useState<number | null>(null);
+  const abanico = useRef<HTMLDivElement>(null);
+  const conDedo = useRef(false);
+
+  function cartaBajo(x: number, y: number): number | null {
+    const el = document.elementFromPoint(x, y)?.closest<HTMLElement>(".abanico-carta");
+    return el?.dataset.i ? Number(el.dataset.i) : null;
+  }
+  function alTocar(e: React.PointerEvent) {
+    if (e.pointerType === "mouse" || elegida !== null) return;
+    conDedo.current = true;
+    const i = cartaBajo(e.clientX, e.clientY);
+    if (i !== tocada) { setTocada(i); if (i !== null) vibrar(4); }
+  }
+  function alSoltar(e: React.PointerEvent) {
+    if (e.pointerType === "mouse") return;
+    const i = cartaBajo(e.clientX, e.clientY);
+    setTocada(null);
+    setTimeout(() => { conDedo.current = false; }, 500);
+    const el = i !== null && abanico.current?.querySelector<HTMLElement>(`[data-i="${i}"]`);
+    if (el) elegir(i as number, el);
+  }
 
   useEffect(() => {
     const id = setTimeout(() => setAbierto(true), 120);
@@ -35,13 +58,17 @@ export function Elegir({ onElegida }: { onElegida: (desde: Origen) => void }) {
     <div className={`etapa etapa-elegir ${elegida !== null ? "eligiendo" : ""}`}>
       <h1 className="titulo">{t.ritual.elegir.titulo}</h1>
       <p className="guia">{t.ritual.elegir.texto}</p>
-      <div className={`abanico ${abierto ? "abierto" : ""} ${elegida !== null ? "hay-elegida" : ""}`}>
+      <div
+        ref={abanico} className={`abanico ${abierto ? "abierto" : ""} ${elegida !== null ? "hay-elegida" : ""}`}
+        onPointerDown={alTocar} onPointerMove={alTocar} onPointerUp={alSoltar}
+        onPointerCancel={() => setTocada(null)}
+      >
         {Array.from({ length: n }, (_, i) => (
           <button
-            key={i} className={`abanico-carta ${elegida === i ? "elegida" : ""}`}
+            key={i} data-i={i} className={`abanico-carta ${elegida === i ? "elegida" : ""} ${tocada === i ? "tocada" : ""}`}
             style={{ "--a": `${(i - (n - 1) / 2) * 7}deg`, "--i": i } as React.CSSProperties}
             aria-label={con(t.ritual.elegir.carta, { n: i + 1, total: n })}
-            onClick={(e) => elegir(i, e.currentTarget)}
+            onClick={(e) => { if (conDedo.current) { conDedo.current = false; return; } elegir(i, e.currentTarget); }}
           >
             <img src={dorso} alt="" draggable={false} />
           </button>
